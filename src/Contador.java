@@ -1,5 +1,5 @@
-public class Exercicio6 {
-    public int Contador(){
+public class Contador {
+    public int contador(){
         No aux = Head;
         int elementos = 0;
         if(aux == null){
