@@ -1,9 +1,9 @@
 public class Busca {
 
-    private No inicio;
+    private No head;
 
-    public static boolean buscar(No inicio, int valor) {
-        No atual = inicio;
+    public static boolean buscar(No head, int valor) {
+        No atual = head;
 
         while (atual != null) {
             if (atual.getDado() == valor) {
