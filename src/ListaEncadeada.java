@@ -41,6 +41,8 @@ public class ListaEncadeada {
                 aux = aux.getProximo();
             }
         }
+
+        return elementos;
     }
 
     public void inserirInicio(int valor) {
