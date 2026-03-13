@@ -1,18 +1,18 @@
 public class InserirPosicao {
 
-    private No inicio;
+    private No head;
 
     public void inserirPosicao(int dado, int posicao) {
         No novo = new No();
         novo.setDado(dado);
 
         if (posicao == 0) {
-            novo.setProximo(inicio);
-            inicio = novo;
+            novo.setProximo(head);
+            head = novo;
             return;
         }
 
-        No atual = inicio;
+        No atual = head;
         int contador = 0;
 
         while (atual != null && contador < posicao - 1) {
