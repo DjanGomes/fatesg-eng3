@@ -182,7 +182,6 @@ public class ListaEncadeada {
     }
 
     public void remover(int dado){
-        boolean v = existe(dado);
         if(head == null){
             System.out.println("Lista vazia");
             return;
@@ -192,21 +191,17 @@ public class ListaEncadeada {
             return;
         }
 
-        if(v){
-            No atual = head;
-            while(atual != null && atual.getProximo().getDado() != dado){
-                atual = atual.getProximo();
-            }
-            if(atual.getProximo() != null){
-                atual.setProximo(atual.getProximo().getProximo());
-            }
-            while (atual != null){
-                if(atual.getDado() % 2 == 0 && atual.getDado() == dado){
-                    atual.setProximo(atual.getProximo().getProximo());
-                }
-                atual = atual.getProximo();
-            }
+        No atual = head;
+        while(atual.getProximo() != null && atual.getProximo().getDado() != dado){
+            atual = atual.getProximo();
         }
+
+        if(atual.getProximo() == null){
+            System.out.println("Valor não encontrado");
+            return;
+        }
+
+        atual.setProximo(atual.getProximo().getProximo());
     }
     public void removerPares(){
 
