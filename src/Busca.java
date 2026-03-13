@@ -2,7 +2,7 @@ public class Busca {
 
     private No head;
 
-    public static boolean buscar(No head, int valor) {
+    public static boolean buscar(No head,int valor) {
         No atual = head;
 
         while (atual != null) {

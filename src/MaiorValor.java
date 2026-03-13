@@ -1,4 +1,5 @@
 public class MaiorValor {
+    private No head;
 
     public int maiorValor() {
         if(head == null){

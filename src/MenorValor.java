@@ -1,5 +1,5 @@
 public class MenorValor {
-
+    private No head;
 
     public int menorValor(){
 

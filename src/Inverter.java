@@ -1,4 +1,5 @@
 public class Inverter {
+    private No head;
 
     public void inverter(){
 

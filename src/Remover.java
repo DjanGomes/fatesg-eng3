@@ -1,8 +1,8 @@
 public class Remover {
-    No inicio;
+    No head;
 
     public boolean existe(int valor){
-        No atual = inicio;
+        No atual = head;
 
         while (atual != null){
             if(atual.getDado() == valor){
@@ -12,22 +12,19 @@ public class Remover {
         return false;
     }
 
-    public Remover(){
-        this.inicio = null;
-    }
     public void remover(int dado){
         boolean v = existe(dado);
-        if(inicio == null){
+        if(head == null){
             System.out.println("Lista vazia");
             return;
         }
-        if(inicio.getDado() == dado){
-            inicio = inicio.getProximo();
+        if(head.getDado() == dado){
+            head = head.getProximo();
             return;
         }
 
         if(v){
-            No atual = inicio;
+            No atual = head;
             while(atual != null && atual.getProximo().getDado() != dado){
                 atual = atual.getProximo();
             }
@@ -44,11 +41,11 @@ public class Remover {
     }
     public void removerPares(){
 
-        while(inicio != null && inicio.getDado() % 2 == 0){
-            inicio = inicio.getProximo();
+        while(head != null && head.getDado() % 2 == 0){
+            head = head.getProximo();
         }
 
-        No atual = inicio;
+        No atual = head;
 
         while(atual != null && atual.getProximo() != null){
 

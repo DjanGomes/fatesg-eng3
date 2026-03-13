@@ -2,7 +2,7 @@ public class ListaEncadeada {
 
     private No head;
 
-    public static boolean buscar(No head, int valor) {
+    public boolean buscar(int valor) {
         No atual = head;
 
         while (atual != null) {
@@ -36,7 +36,7 @@ public class ListaEncadeada {
         if(aux == null){
             System.out.println("A lista está vazia");
         }else {
-            while (aux.getProximo() != null) {
+            while (aux != null) {
                 elementos++;
                 aux = aux.getProximo();
             }
@@ -91,6 +91,33 @@ public class ListaEncadeada {
         }
 
         head = anterior;
+    }
+
+    public void inserirPosicao(int dado, int posicao) {
+        No novo = new No();
+        novo.setDado(dado);
+
+        if (posicao == 0) {
+            novo.setProximo(head);
+            head = novo;
+            return;
+        }
+
+        No atual = head;
+        int contador = 0;
+
+        while (atual != null && contador < posicao - 1) {
+            atual = atual.getProximo();
+            contador++;
+        }
+
+        if (atual == null) {
+            System.out.println("Posição inválida");
+            return;
+        }
+
+        novo.setProximo(atual.getProximo());
+        atual.setProximo(novo);
     }
 
     public int maiorValor() {

@@ -1,4 +1,5 @@
 public class Consultar {
+    private No head;
 
     public void consultar() {
         if (head == null) {
